@@ -1,0 +1,6 @@
+groups:
+  - name: custom
+    rules:
+      - record: node_memory_used_percent
+        expr: 100 - ceil((node_memory_MemFree_bytes / node_memory_MemTotal_bytes * 100))
+
