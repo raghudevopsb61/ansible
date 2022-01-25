@@ -37,3 +37,6 @@ scrape_configs:
 #        access_key: PUT_THE_ACCESS_KEY_HERE
 #        secret_key: PUT_THE_SECRET_KEY_HERE
         port: 9100
+        filters:
+          - name: tag:Monitor
+            values: yes
