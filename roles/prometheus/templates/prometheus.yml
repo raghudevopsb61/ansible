@@ -31,7 +31,7 @@ scrape_configs:
 #    static_configs:
 #      - targets: ["172.31.84.127:9100"]
 
-  - job_name: 'ec2-nodes'
+  - job_name: 'ec2-nodes-dev'
     ec2_sd_configs:
       - region: us-east-1
 #        access_key: PUT_THE_ACCESS_KEY_HERE
@@ -40,3 +40,4 @@ scrape_configs:
         filters:
           - name: tag:Monitor
             values: yes
+          - name: tag:ENV
