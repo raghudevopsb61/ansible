@@ -8,6 +8,11 @@
     src: records.yml
     dest: /opt/prometheus/records.yml
 
+- name: Uodate Alerts file
+  template:
+    src: alerts.yml
+    dest: /opt/prometheus/alerts.yml
+
 - name: Restart Prometheus
   systemd:
     name: prometheus
