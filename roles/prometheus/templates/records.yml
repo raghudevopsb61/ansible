@@ -1,7 +1,7 @@
 groups:
   - name: custom
     rules:
-      - record: node_memory_used_percent
+      - record: memoryUsagePercentage
         expr: 100 - ceil((node_memory_MemFree_bytes / node_memory_MemTotal_bytes * 100))
       - record: cpuUsagePercentage
         expr: 100 - (avg by (instanceName) (rate(node_cpu_seconds_total{mode="idle"}[1m]) * 100 ))
