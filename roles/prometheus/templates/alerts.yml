@@ -1,5 +1,5 @@
 groups:
-  - name: Instance DAlerts
+  - name: Instance Down Alerts
     rules:
       - alert: InstanceDown
         expr: up == 0
@@ -13,28 +13,32 @@ groups:
 
           description: {%raw%}"Instance Down - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
 
-#      - alert: CpuUsageAlert
-#        expr: cpuUsagePercentage > 80
-#        for: 2m
-#        labels:
-#          severity: critical
-#          type: instanceAlert
-#          kind: cpuHighUsage
-#        annotations:
-#          summary: {%raw%}"CPU High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
-#
-#          description: {%raw%}"CPU Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
-#
-#       - alert: MemoryUsageAlert
-#         expr: memoryUsagePercentage > 80
-#         for: 2m
-#         labels:
-#           severity: critical
-#           type: instanceAlert
-#           kind: memoryHighUsage
-#         annotations:
-#           summary: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
-#
-#           description: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+  - name: Instance CPU Alerts
+    rules:
+      - alert: CpuUsageAlert
+        expr: cpuUsagePercentage > 80
+        for: 2m
+        labels:
+          severity: critical
+          type: instanceAlert
+          kind: cpuHighUsage
+        annotations:
+          summary: {%raw%}"CPU High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
+          description: {%raw%}"CPU Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
+  - name: Instance Memory Alerts
+    rules:
+       - alert: MemoryUsageAlert
+         expr: memoryUsagePercentage > 80
+         for: 2m
+         labels:
+           severity: critical
+           type: instanceAlert
+           kind: memoryHighUsage
+         annotations:
+           summary: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
+           description: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
 
 
