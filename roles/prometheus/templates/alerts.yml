@@ -10,6 +10,7 @@ groups:
           kind: instanceDown
         annotations:
           summary: {%raw%}"Instance Down - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
           description: {%raw%}"Instance Down - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
       - alert: CpuUsageAlert
         expr: cpuUsagePercentage > 80
@@ -20,6 +21,7 @@ groups:
           kind: cpuHighUsage
         annotations:
           summary: {%raw%}"CPU High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
           description: {%raw%}"CPU Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
        - alert: MemoryUsageAlert
          expr: memoryUsagePercentage > 80
@@ -30,5 +32,6 @@ groups:
            kind: memoryHighUsage
          annotations:
            summary: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+           
            description: {%raw%}"Memory High Usage - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
 
