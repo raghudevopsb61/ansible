@@ -1,0 +1,17 @@
+groups:
+{% for component in COMPONENTS %}
+  - name: Cart Application Alert
+    rules:
+      - alert: Cart Application Down
+        expr: "node_systemd_unit_state{job="ec2-nodes", name="cart.service", state="active"}" != 0
+        for: 1m
+        labels:
+          severity: critical
+          type: applicationAlerts
+          kind: serviceAlert
+          appName: cart
+        annotations:
+          summary: {%raw%}"Cart Component Service Down - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+
+          description: {%raw%}"Cart Component Service Down - IP - [{{ $labels.instance}}], Name - [{{ $labels.instanceName}}]"{%endraw%}
+{% endfor %}
