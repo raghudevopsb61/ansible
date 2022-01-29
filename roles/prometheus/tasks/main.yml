@@ -34,4 +34,3 @@
     name: alertmanager
     state: restarted
     enabled: yes
-    

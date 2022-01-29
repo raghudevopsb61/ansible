@@ -13,9 +13,9 @@ receivers:
         auth_username: {{SMTP_USERNAME}}
         auth_password: {{SMTP_PASSWORD}}
         require_tls: yes
-inhibit_rules:
-  - source_match:
-      severity: 'critical'
-    target_match:
-      severity: 'warning'
-    equal: ['alertname', 'dev', 'instance']
+#inhibit_rules:
+#  - source_match:
+#      severity: 'critical'
+#    target_match:
+#      severity: 'critical'
+#    equal: ['alertname', 'dev', 'instance']
