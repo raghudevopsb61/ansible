@@ -16,4 +16,4 @@
     name: rsyslog
     state: restarted
     enabled: yes
-  when: COMPONENT_TYPE == "APP"  
+  when: COMPONENT_TYPE == "APP"
