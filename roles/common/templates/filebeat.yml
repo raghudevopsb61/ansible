@@ -5,7 +5,7 @@ filebeat.inputs:
     - /var/log/{{COMPONENT}}.log
 
 output.logstash:
-  hosts: ["logstash.roboshop.internal	:5044"]
+  hosts: ["logstash.roboshop.internal:5044"]
 
 ## Defaults
 filebeat.config.modules:

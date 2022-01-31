@@ -13,6 +13,13 @@
     src: filebeat.yml
     dest: /etc/filebeat/filebeat.yml
 
+- name: Start Filebeat
+  systemd:
+    name: filebeat
+    state: restarted
+    enabled: true
+
+
 
 
 
