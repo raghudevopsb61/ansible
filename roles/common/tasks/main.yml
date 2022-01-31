@@ -17,3 +17,7 @@
     state: restarted
     enabled: yes
   when: COMPONENT_TYPE == "APP"
+
+- name: Filebeat Config
+  ansible.builtin.include_tasks:
+    file: filebeat.yml
