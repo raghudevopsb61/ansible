@@ -6,6 +6,8 @@ filebeat.inputs:
   fields:
     componentName: {{COMPONENT}}
     env: {{ENV}}
+  json.keys_under_root: true
+  json.message_key: msg
 
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
