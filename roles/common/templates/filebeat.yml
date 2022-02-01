@@ -7,7 +7,7 @@ filebeat.inputs:
     componentName: {{COMPONENT}}
     env: {{ENV}}
     logType: json
-    
+
   json.keys_under_root: true
   json.message_key: msg
 
