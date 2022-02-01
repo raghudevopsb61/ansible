@@ -1,2 +1,4 @@
 COMPONENT: user
 COMPONENT_TYPE: APP
+LOG_FILE: /var/log/user.log
+

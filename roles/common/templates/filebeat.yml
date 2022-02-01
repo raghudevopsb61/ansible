@@ -2,7 +2,7 @@ filebeat.inputs:
 - type: filestream
   enabled: true
   paths:
-    - /var/log/{{COMPONENT}}.log
+    - {{LOG_FILE}}
   fields:
     componentName: {{COMPONENT}}
     env: {{ENV}}

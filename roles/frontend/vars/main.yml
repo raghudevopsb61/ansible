@@ -1,2 +1,4 @@
 COMPONENT: frontend
 COMPONENT_TYPE: APP
+LOG_FILE: /var/log/nginx/access.log
+

@@ -1,2 +1,4 @@
 COMPONENT: shipping
 COMPONENT_TYPE: APP
+LOG_FILE: /var/log/shipping.log
+

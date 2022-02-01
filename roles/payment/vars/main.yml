@@ -1,2 +1,4 @@
 COMPONENT: payment
 COMPONENT_TYPE: APP
+LOG_FILE: /var/log/payment.log
+
