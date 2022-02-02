@@ -18,7 +18,7 @@ filebeat.inputs:
 {% endif %}
 {% if APP_LANG == "python" %}
   include_lines:
-    - '^\['
+    - '^\[2'
 {% endif %}
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
