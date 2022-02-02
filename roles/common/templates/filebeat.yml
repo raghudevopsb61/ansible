@@ -10,7 +10,12 @@ filebeat.inputs:
 {% if LOG_TYPE == "json" %}
   json.keys_under_root: true
 {% endif %}
-
+{% if APP_LANG == "java" %}
+  multiline.type: pattern
+  multiline.pattern: '^\['
+  multiline.negate: true
+  multiline.match: after
+{% endif %}
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
 

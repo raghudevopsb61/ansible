@@ -2,3 +2,4 @@ COMPONENT: dispatch
 COMPONENT_TYPE: APP
 LOG_FILE: /var/log/dispatch.log
 LOG_TYPE: raw
+APP_LANG: golang
