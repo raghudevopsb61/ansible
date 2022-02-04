@@ -8,6 +8,11 @@
     name: common
     tasks_from: download
 
+- name: Stop {{COMPONENT}} Service
+  ansible.builtin.systemd:
+    name: "{{COMPONENT}}"
+    state: stopped
+
 - name: Remove Old App Content
   ansible.builtin.file:
     path: /home/roboshop/{{COMPONENT}}
