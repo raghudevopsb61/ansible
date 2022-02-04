@@ -13,7 +13,7 @@
   ansible.builtin.systemd:
     name: "{{COMPONENT}}"
     state: stopped
-  ignore_errors: yes 
+  ignore_errors: yes
 
 - name: Remove Old App Content
   ansible.builtin.file:
